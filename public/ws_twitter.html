@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js'></script> -->
+    <script src='jquery.min.js'></script>
+    <script>
+      $(function(){
+        ws = new WebSocket("ws://localhost:8080/");
+        ws.onmessage = function(tweet) { $('#tweets').prepend(tweet.data); };
+      });
+    </script>
+  </head>
+  <body>
+    <pre><code id="tweets"></code></pre>
+  </body>
+</html>

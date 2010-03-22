@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>WebSockets</title>
+<!-- metadata -->
+<meta name="generator" content="S5.t" />
+<meta name="version" content="S5.t 0.1" />
+<meta name="author" content="Niko Dittmann" />
+<meta name="company" content="restorm AG" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<link rel="stylesheet" href="ui/laut/laut.css" type="text/css" />
+
+<!-- embedded styles -->
+<style type="text/css" media="all">
+</style>
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+
+<script src="dot_t/dot_t.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header">
+  <div id="logo"></div>
+</div>
+<div id="footer">
+<h1>WebSockets</h1>
+<h2>seitenbau.de &amp; laut.de dev-day 2010</h2>
+</div>
+</div>
+
+<div class="presentation">
+h1. WebSockets
+
+h2. Niko Dittmann
+
+::slide::
+
+h1. Problem?
+
+<h1 class="bang">Server muss Daten an Client pushen</h1>
+
+::slide::
+
+h1. Lösungen bisher
+
++ Polling
++ Long Polling
++ Streaming
++ Flash oder Java Applets
+
+::slide::
+
+h1. ws://WebSockets
+
+* Stehende Verbindung zwischen Client & Server
+
+::slide::
+
+h1. Potentielle Haken
+
++ Browser Unterstützung
++ Sicherheit
++ Proxies & Firewalls
++ Cookies / Sessions
+
+::slide::
+
+h1. Browser Unterstützung
+
++ Chrome dev 4
++ Gecko nightlies
++ WebKit nightlies
++ IE12?
++ Fallback: WebSockets Emulation über Flash [1]
+++ Chrome 3, Firefox 3.5, IE8, Flash 9
+
+::slide::
+
+h1. Sicherheit
+
++ Verbindung wird vom Client initiiert
++ Nur zum Sever, von dem die Seite stammt
++ Gleiche Einschränkungen wie AJAX Requests
++ Flash-Emulation: Policy File schränkt Ports & Domains ein
+
+::slide::
+
+h1. Proxies & Firewalls
+
++ Proxies werden im Prinzip gleich behandelt, wie durch HTTP, teils jedoch inkompatibel
+++ transparente vs. explizite Proxies
+++ ws:// vs. wss://
++ Firewalls müssen Verbindung zu WS-Port zulassen
++ HTTP Connect für Verbindung über Proxies (noch) nicht mit Flash-Emulation
+
+::slide::
+
+h1. Mankos
+
++ Kein explizites Framing
++ Datentypen UTF-8 & Binary
++ Keine Message-Fragmentierung vorgesehen
+
+::slide::
+
+h1. Einsatzzweck
+
++ Chat
++ Server-Monitoring
++ Auto-Completion & filtern von Suchergebnislisten
++ Real-Time Web
++ Games
+
+::slide::
+
+h1. WebSockets Verbindungsaufbau
+
+h2. Request
+
+::ruby
+GET /initialize_chat HTTP/1.1
+Upgrade: WebSocket
+Connection: Upgrade
+Host: chat-service.com
+Origin: http://chat-service.com/chat
+ruby::
+
+h2. Response
+
+::ruby
+HTTP/1.1 101 Web Socket Protocol Handshake
+Upgrade: WebSocket
+Connection: Upgrade
+WebSocket-Origin: http://chat-service.com/chat
+WebSocket-Location: ws://chat-service.com/
+ruby::
+
+::slide::
+
+h1. Webentwicklung in der Zukunft
+
+Werden wir Web-Applikationen in Zukunft eher so schreiben wie Desktop-Applikationen? Server-Events direkt an UI-Elemente knüpfen? Server-seitig asynchron auf Datenbanken und andere Web-Services zugreifen? Immer mehr Tasks als Background-Jobs implementieren? Lernen müssen, mit Concurrency-Modellen umzugehen? Prozesse, Threads, Semi-Coroutinen, Event-Loops? Wie kommunizieren mehrere Server eines Multi-Server-Setups miteinander? Message-Queues? Passen Continuation-basierte Web-Frameworks besser zur Architektur mit einer stehenden Client-Server-Verbindung? Scaling? Load-Balancing?
+
+::slide::
+
+h1. Links
+
+h2. Allgmeine Infos
+
+"WebSockets Protokoll Spezifikation":http://www.tbray.org/drafts/wsock-00
+"Wikipedia: The Realtime Web":http://en.wikipedia.org/wiki/Real-time_web
+"WebSockets & Proxies":http://www.infoq.com/articles/Web-Sockets-Proxy-Servers
+
+h2. Client-seitig
+
+[1] "Flash-Emulation web-socket-js":http://github.com/gimite/web-socket-js
+"Ext JS Roadmap mit WebSocket Support late 2010":http://www.extjs.com/products/js/roadmap.php
+
+h2. Server-seitig
+
+"EventMachine WebSockets-Erweiterung (Ruby)":http://github.com/igrigorik/em-websocket
+"Cramp - asynchrones Ruby-Web-Framework":http://github.com/lifo/cramp
+"Kaazing WebSocket Gateway":http://www.kaazing.com/download
+"Node.js Evented I/O for V8":http://github.com/ry/node
+"Jetty - Java Webserver mit WebSockets-Support":http://blogs.webtide.com/gregw/entry/jetty_websocket_server
+
+h2. Weiterführend
+
+"twitter-stream ruby gem":http://github.com/voloko/twitter-stream
+"Seaside - Continuation-basiertes Web-Framework in Smalltalk":http://seaside.st/
+"Wee - Continuation-basiertes Web-Framework in Ruby":http://github.com/mneumann/wee
+
+</div>
+
+</body>
+</html>

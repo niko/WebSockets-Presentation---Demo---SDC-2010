@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js'></script> -->
+    <script src='jquery.min.js'></script>
+    <script>
+      $(function(){
+        ws = new WebSocket("ws://localhost:8080/");
+        ws.onmessage = function(evt) {
+          var data = evt.data.split(',');
+          var i = data[0];
+          var x = parseInt(data[1]);
+          var y = parseInt(data[2]);
+          if ( $('#i' + i).length == 0 ){
+            var div = "<div id=i"+ i +" style='position:absolute;'>"+ i +"</div>";
+            $(div).appendTo("body");
+          }
+          $('#i'+i).css({
+            "left" : x +"px",
+            "top" : y - 20 +"px"
+          });
+          $('#counter').html( parseInt($('#counter').text()) + 1 )
+        }; // ws.om
+      }); // doc.ready
+      $(document).mousemove(function(e){  ws.send(e.pageX +','+ e.pageY) });
+    </script>
+  </head>
+  <body>
+    <div id="counter">0</div>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+body{
+	background-image: none;
+	background: #f2f2f2 url('com_top_gradient.png') repeat-x left 60px;
+	color: #4D4D4D;
+	font-family:"HelveticaNeue-Roman","Helvetica 55 Roman",Helvetica,Arial,sans-serif;
+	line-height:1.5em;
+}
+
+:link, :visited{
+	text-decoration: underline;
+	color: #4a4a4a;
+}
+
+.slide h1, #slide0 h1{
+	color:#418096;
+	background-color: transparent;
+	padding-left:0;
+}
+
+.slide h1{
+	padding-top:60px;
+	margin-top:-1.5em;
+	margin-left:0px;
+	text-transform: none;
+}
+
+.slide p{
+	margin-left:5%;
+	margin-right:7%;
+}
+
+div#header{
+	background: url('com_background.png') repeat-x left top;
+}
+
+div#footer{
+	color:#aab;
+	background: #003946 url('com_footer.png') repeat-x left top;
+}
+div#footer h1, div#footer h2{
+	margin:0;
+	padding:0.2em 1em;
+	line-height:1.2em;
+}
+div#footer a{
+	color:#aab;
+}
+
+#controls #navLinks a, #plink{
+  background: transparent;
+	color: #aab;
+}
+
+div#logo{
+	right:20px;
+	position:absolute;
+	width:240px;
+	height:60px;
+	background: url('com_logo.png') no-repeat 20px 10px;
+}
+
+#navLinks a{
+	background: transparent none;
+}
+
+.incremental, .incremental *, .incremental *:after{
+	visibility: hidden;
+}
+.slide .current {color: #4D4D4D;}
+
