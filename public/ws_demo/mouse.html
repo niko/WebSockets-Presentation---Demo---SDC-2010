@@ -5,7 +5,7 @@
     <script src='jquery.min.js'></script>
     <script>
       $(function(){
-        ws = new WebSocket("ws://localhost:8080/");
+        ws = new WebSocket(document.location.toString().replace('http:','ws:').replace(/:\d+\/.*/,":8080/"));
         ws.onmessage = function(evt) {
           var data = evt.data.split(',');
           var i = data[0];
