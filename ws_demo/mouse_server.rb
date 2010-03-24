@@ -17,6 +17,7 @@ EventMachine.run do
     ws.onmessage do |msg|
       @clients.each { |s| s.send "#{@clients.index ws},#{msg}" }
       print '.' * @clients.size
+      STDOUT.flush
     end
 
     ws.onclose do
