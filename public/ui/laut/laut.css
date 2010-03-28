@@ -33,10 +33,25 @@ h1, h2, h3, h4 {font-size: 100%; margin: 0; padding: 0; font-weight: inherit;}
 	margin-left:0px;
 	text-transform: none;
 }
-
+.slide h2{
+  margin-left:3%;
+}
+.slide h3{
+  font-size: 80%;
+  text-align: center;
+}
+.slide ul{
+  margin-left:3%;
+}
 .slide p{
 	margin-left:0%;
 	margin-right:7%;
+}
+
+.slide img{
+  display:block;
+  margin:10px auto;
+  max-height:13em;
 }
 
 div#header{

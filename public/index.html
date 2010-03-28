@@ -53,9 +53,19 @@ h2. "http://github.com/niko":http://github.com/niko
 
 ::slide::
 
-h1. Problem?
+h1. Server muss Daten an Client pushen
 
-<h1 class="bang">Server muss Daten an Client pushen</h1>
+!pix/push.jpg!
+
+h3. (cc via "http://www.flickr.com/photos/vidiot":http://www.flickr.com/photos/vidiot)
+
+::slide::
+
+h1. Lösungen bisher
+
+!pix/polling.jpg!
+
+h3. (cc via "http://www.flickr.com/photos/chodhound/":http://www.flickr.com/photos/chodhound/)
 
 ::slide::
 
@@ -70,16 +80,32 @@ h1. Lösungen bisher
 
 h1. ws://WebSockets
 
-* Stehende Verbindung zwischen Client & Server
+h2. Stehende Verbindung zwischen Client & Server
+
+!pix/can.jpg!
 
 ::slide::
 
-h1. Potentielle Haken
+h1. Potenzielle Haken
+
+!pix/haken.jpg!
+
+h3. (cc via "http://www.flickr.com/photos/donvanone":http://www.flickr.com/photos/donvanone)
+
+::slide::
+
+h1. Potenzielle Haken
 
 + Browser Unterstützung
 + Sicherheit
 + Proxies & Firewalls
 + Cookies / Sessions
+
+::slide::
+
+h1. Browser Unterstützung
+
+!pix/laut_links.png!
 
 ::slide::
 
@@ -96,10 +122,26 @@ h1. Browser Unterstützung
 
 h1. Sicherheit
 
+!pix/security.jpg!
+
+h3. (cc via "http://www.flickr.com/photos/aquilaonline":http://www.flickr.com/photos/aquilaonline)
+
+::slide::
+
+h1. Sicherheit
+
 + Verbindung wird vom Client initiiert
 + Nur zum Sever, von dem die Seite stammt
 + Gleiche Einschränkungen wie AJAX Requests
 + Flash-Emulation: Policy File schränkt Ports & Domains ein
+
+::slide::
+
+h1. Proxies & Firewalls
+
+!pix/wall.jpg!
+
+h3. (cc via "http://www.flickr.com/photos/joriel":http://www.flickr.com/photos/joriel)
 
 ::slide::
 
@@ -110,6 +152,12 @@ h1. Proxies & Firewalls
 ++ ws:// vs. wss://
 + Firewalls müssen Verbindung zu WS-Port zulassen
 + HTTP Connect für Verbindung über Proxies (noch) nicht mit Flash-Emulation
+
+::slide::
+
+h1. Mankos
+
+!pix/fail.jpg!
 
 ::slide::
 
@@ -163,30 +211,39 @@ Werden wir Web-Applikationen in Zukunft eher so schreiben wie Desktop-Applikatio
 
 h1. Links
 
-h2. Allgmeine Infos
+h2. Allgemeine Infos
 
-"WebSockets Protokoll Spezifikation":http://www.tbray.org/drafts/wsock-00
-"Wikipedia: The Realtime Web":http://en.wikipedia.org/wiki/Real-time_web
-"WebSockets & Proxies":http://www.infoq.com/articles/Web-Sockets-Proxy-Servers
+* "WebSockets Protokoll Spezifikation":http://www.tbray.org/drafts/wsock-00
+* "WebSockets & Proxies":http://www.infoq.com/articles/Web-Sockets-Proxy-Servers
 
 h2. Client-seitig
 
-[1] "Flash-Emulation web-socket-js":http://github.com/gimite/web-socket-js
-"Ext JS Roadmap mit WebSocket Support late 2010":http://www.extjs.com/products/js/roadmap.php
+* [1] "Flash-Emulation web-socket-js":http://github.com/gimite/web-socket-js
+* "Ext JS Roadmap mit WebSocket Support late 2010":http://www.extjs.com/products/js/roadmap.php
+
+::slide::
+
+h1. Links (2)
 
 h2. Server-seitig
 
-"EventMachine WebSockets-Erweiterung (Ruby)":http://github.com/igrigorik/em-websocket
-"Cramp - asynchrones Ruby-Web-Framework":http://github.com/lifo/cramp
-"Kaazing WebSocket Gateway":http://www.kaazing.com/download
-"Node.js Evented I/O for V8":http://github.com/ry/node
-"Jetty - Java Webserver mit WebSockets-Support":http://blogs.webtide.com/gregw/entry/jetty_websocket_server
+* "EventMachine WebSockets-Erweiterung (Ruby)":http://github.com/igrigorik/em-websocket
+* "Cramp - asynchrones Ruby-Web-Framework":http://github.com/lifo/cramp
+* "Kaazing WebSocket Gateway":http://www.kaazing.com/download
+* "Node.js Evented I/O for V8":http://github.com/ry/node
+* "Jetty - Java Webserver mit WebSockets-Support":http://blogs.webtide.com/gregw/entry/jetty_websocket_server
+
+::slide::
+
+h1. Links (3)
 
 h2. Weiterführend
 
-"twitter-stream ruby gem":http://github.com/voloko/twitter-stream
-"Seaside - Continuation-basiertes Web-Framework in Smalltalk":http://seaside.st/
-"Wee - Continuation-basiertes Web-Framework in Ruby":http://github.com/mneumann/wee
+* "Wikipedia: The Realtime Web":http://en.wikipedia.org/wiki/Real-time_web
+* "«RTW - WTF?» WebSockets Präsentation":http://www.slideshare.net/mloughran/real-time-web-whats-that-for
+* "twitter-stream ruby gem":http://github.com/voloko/twitter-stream
+* "Seaside - Continuation-basiertes Web-Framework in Smalltalk":http://seaside.st/
+* "Wee - Continuation-basiertes Web-Framework in Ruby":http://github.com/mneumann/wee
 
 </div>
 
