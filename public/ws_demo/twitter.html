@@ -15,6 +15,9 @@
         ws = new WebSocket(ws_location);
         ws.onmessage = function(tweet){ $('#tweets').prepend("<li>"+tweet.data+"</li>"); };
       };
+      stop = function(){
+        ws.close();
+      }
     </script>
     <style>
       body{font-family:sans-serif;}
@@ -24,8 +27,8 @@
     </style>
   </head>
   <body>
-    <ul id="tweets">
-    </ul>
     <a href="#" onclick="start()">Start</a>
+    <a href="#" onclick="stop()">Stop</a>
+    <ul id="tweets"></ul>
   </body>
 </html>
