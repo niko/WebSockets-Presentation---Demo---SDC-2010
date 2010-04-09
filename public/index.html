@@ -1,48 +1,48 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-<head>
-<title>WebSockets</title>
-<!-- metadata -->
-<meta name="generator" content="S5.t" />
-<meta name="version" content="S5.t 0.1" />
-<meta name="author" content="Niko Dittmann" />
-<meta name="company" content="restorm AG" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<!-- configuration parameters -->
-<meta name="defaultView" content="slideshow" />
-<meta name="controlVis" content="hidden" />
-<!-- style sheet links -->
-<link rel="stylesheet" href="ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
-<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
-<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
-<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
-<link rel="stylesheet" href="ui/laut/laut.css" type="text/css" />
+  <head>
+    <title>WebSockets</title>
+    <!-- metadata -->
+    <meta name="generator" content="S5.t" />
+    <meta name="version" content="S5.t 0.1" />
+    <meta name="author" content="Niko Dittmann" />
+    <meta name="company" content="restorm AG" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!-- configuration parameters -->
+    <meta name="defaultView" content="slideshow" />
+    <meta name="controlVis" content="hidden" />
+    <!-- style sheet links -->
+    <link rel="stylesheet" href="ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+    <link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+    <link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+    <link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+    <link rel="stylesheet" href="ui/laut/laut.css" type="text/css" />
 
-<!-- embedded styles -->
-<style type="text/css" media="all">
-</style>
-<!-- S5 JS -->
-<script src="ui/default/slides.js" type="text/javascript"></script>
+    <!-- embedded styles -->
+    <style type="text/css" media="all">
+      iframe{border:none; width:930px; height:430px;}
+    </style>
+    <!-- S5 JS -->
+    <script src="ui/default/slides.js" type="text/javascript"></script>
 
-<script src="dot_t/dot_t.js" type="text/javascript"></script>
+    <script src="dot_t/dot_t.js" type="text/javascript"></script>
 
-</head>
-<body>
+  </head>
+  <body>
 
-<div class="layout">
-<div id="controls"><!-- DO NOT EDIT --></div>
-<div id="currentSlide"><!-- DO NOT EDIT --></div>
-<div id="header">
-  <div id="logo"></div>
-</div>
-<div id="footer">
-<h1>WebSockets</h1>
-<h2>Seitenbau Developer Convention 2010</h2>
-</div>
-</div>
+    <div class="layout">
+      <div id="controls"><!-- DO NOT EDIT --></div>
+      <div id="currentSlide"><!-- DO NOT EDIT --></div>
+      <div id="header">
+        <div id="logo"></div>
+      </div>
+      <div id="footer">
+        <h1>WebSockets</h1>
+        <h2>Seitenbau Developer Convention 2010</h2>
+      </div>
+    </div>
 
 <div class="presentation">
 h1. WebSockets
@@ -65,7 +65,7 @@ h1. Lösungen bisher
 
 !pix/polling.jpg!
 
-h3. (cc via "http://www.flickr.com/photos/chodhound/":http://www.flickr.com/photos/chodhound/)
+h3. (cc via "http://www.flickr.com/photos/chodhound":http://www.flickr.com/photos/chodhound)
 
 ::slide::
 
@@ -147,7 +147,13 @@ h3. (cc via "http://www.flickr.com/photos/joriel":http://www.flickr.com/photos/j
 
 h1. Proxies & Firewalls
 
-+ Proxies werden im Prinzip gleich behandelt, wie durch HTTP, teils jedoch inkompatibel
++ Proxies behandeln WebSocket-Verbindungen im Prinzip gleich, wie HTTP
+
+::slide::
+
+h1. Proxies & Firewalls
+
++ Proxies behandeln WebSocket-Verbindungen *im Prinzip* gleich, wie HTTP
 ++ transparente vs. explizite Proxies
 ++ ws:// vs. wss://
 + Firewalls müssen Verbindung zu WS-Port zulassen
@@ -203,9 +209,28 @@ ruby::
 
 ::slide::
 
+h1. Twitter Streaming
+
+<iframe src="ws_demo/twitter.html"></iframe>
+
+::slide::
+
+h1. Twitter Streaming
+
+<iframe src="ws_demo/mouse.html"></iframe>
+
+::slide::
+
 h1. Webentwicklung in der Zukunft
 
-Werden wir Web-Applikationen in Zukunft eher so schreiben wie Desktop-Applikationen? Server-Events direkt an UI-Elemente knüpfen? Server-seitig asynchron auf Datenbanken und andere Web-Services zugreifen? Immer mehr Tasks als Background-Jobs implementieren? Lernen müssen, mit Concurrency-Modellen umzugehen? Prozesse, Threads, Semi-Coroutinen, Event-Loops? Wie kommunizieren mehrere Server eines Multi-Server-Setups miteinander? Message-Queues? Passen Continuation-basierte Web-Frameworks besser zur Architektur mit einer stehenden Client-Server-Verbindung? Scaling? Load-Balancing?
+* Werden wir Web-Applikationen in Zukunft eher so schreiben wie Desktop-Applikationen?
+* Server-Events direkt an UI-Elemente knüpfen?
+* Serverseitig asynchron auf Datenbanken und andere Web-Services zugreifen?
+* Immer mehr Tasks als Background-Jobs implementieren? Lernen müssen, mit Concurrency-Modellen umzugehen?
+* Prozesse, Threads, Semi-Coroutinen, Event-Loops?
+* Wie kommunizieren mehrere Server eines Multi-Server-Setups miteinander? Message-Queues?
+* Passen Continuation-basierte Web-Frameworks besser zur Architektur mit einer stehenden Client-Server-Verbindung?
+* Scaling? Load-Balancing?
 
 ::slide::
 
@@ -216,7 +241,7 @@ h2. Allgemeine Infos
 * "WebSockets Protokoll Spezifikation":http://www.tbray.org/drafts/wsock-00
 * "WebSockets & Proxies":http://www.infoq.com/articles/Web-Sockets-Proxy-Servers
 
-h2. Client-seitig
+h2. Clientseitig
 
 * [1] "Flash-Emulation web-socket-js":http://github.com/gimite/web-socket-js
 * "Ext JS Roadmap mit WebSocket Support late 2010":http://www.extjs.com/products/js/roadmap.php
@@ -225,7 +250,7 @@ h2. Client-seitig
 
 h1. Links (2)
 
-h2. Server-seitig
+h2. Serverseitig
 
 * "EventMachine WebSockets-Erweiterung (Ruby)":http://github.com/igrigorik/em-websocket
 * "Cramp - asynchrones Ruby-Web-Framework":http://github.com/lifo/cramp
@@ -245,7 +270,6 @@ h2. Weiterführend
 * "Seaside - Continuation-basiertes Web-Framework in Smalltalk":http://seaside.st/
 * "Wee - Continuation-basiertes Web-Framework in Ruby":http://github.com/mneumann/wee
 
-</div>
-
-</body>
+    </div>
+  </body>
 </html>
