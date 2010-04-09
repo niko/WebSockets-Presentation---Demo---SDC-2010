@@ -2,8 +2,12 @@
 <html>
   <head>
     <script src='jquery.min.js'></script>
-    <script>
-      if (!window.WebSocket){ alert("WebSocket not supported by this browser"); };
+
+    <script type="text/javascript" src="web-socket-js/swfobject.js"></script>
+    <script type="text/javascript" src="web-socket-js/FABridge.js"></script>
+    <script type="text/javascript" src="web-socket-js/web_socket.js"></script>
+    <script type="text/javascript">
+      WebSocket.__swfLocation = "web-socket-js/WebSocketMain.swf";
 
       _open_ws = function(){
         ws = new WebSocket(document.location.toString().replace('http:','ws:').replace(/:\d+\/.*/,":8081/"));
