@@ -22,7 +22,7 @@
 
     <!-- embedded styles -->
     <style type="text/css" media="all">
-      iframe{border:none; width:930px; height:430px;}
+      iframe{border:none; width:29em; height:14em;}
     </style>
     <!-- S5 JS -->
     <script src="ui/default/slides.js" type="text/javascript"></script>
@@ -115,8 +115,9 @@ h1. Browser Unterstützung
 + Gecko nightlies
 + WebKit nightlies
 + IE12?
-+ Fallback: WebSockets Emulation über Flash [1]
++ Fallback: WebSockets Emulation über Flash
 ++ Chrome 3, Firefox 3.5, IE8, Flash 9
+++ benötigt Policy-Server
 
 ::slide::
 
@@ -209,15 +210,42 @@ ruby::
 
 ::slide::
 
-h1. Twitter Streaming
+h1. Demo-Time
 
-<iframe src="ws_demo/twitter.html"></iframe>
+!pix/yeah.png!
 
 ::slide::
 
 h1. Twitter Streaming
 
+<iframe src="ws_demo/twitter.html" marginheight="0" marginwidth="0" frameborder="0" scrolling="no"></iframe>
+
+::slide::
+
+h1. Mouse Tracking
+
 <iframe src="ws_demo/mouse.html"></iframe>
+
+::slide::
+
+::ruby
+@clients = []
+
+EventMachine::WebSocket.start(:host => '0.0.0.0', :port => 8081) do |ws|
+  ws.onopen do
+    @clients << ws
+  end
+
+  ws.onmessage do |msg|
+    @clients.each { |s| s.send "#{@clients.index ws},#{msg}" }
+  end
+
+  ws.onclose do
+    @clients.delete ws
+  end
+end
+ruby::
+
 
 ::slide::
 
@@ -243,7 +271,7 @@ h2. Allgemeine Infos
 
 h2. Clientseitig
 
-* [1] "Flash-Emulation web-socket-js":http://github.com/gimite/web-socket-js
+* "Flash-Emulation web-socket-js":http://github.com/gimite/web-socket-js
 * "Ext JS Roadmap mit WebSocket Support late 2010":http://www.extjs.com/products/js/roadmap.php
 
 ::slide::
