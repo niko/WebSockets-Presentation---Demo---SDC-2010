@@ -8,7 +8,7 @@ EventMachine.run do
 
   @clients = []
 
-  EventMachine::WebSocket.start(:host => '0.0.0.0', :port => 8080) do |ws|
+  EventMachine::WebSocket.start(:host => '0.0.0.0', :port => 8081) do |ws|
     ws.onopen do
       @clients << ws
       puts @clients.inspect

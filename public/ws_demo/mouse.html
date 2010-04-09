@@ -6,7 +6,7 @@
       if (!window.WebSocket){ alert("WebSocket not supported by this browser"); };
 
       _open_ws = function(){
-        ws = new WebSocket(document.location.toString().replace('http:','ws:').replace(/:\d+\/.*/,":8080/"));
+        ws = new WebSocket(document.location.toString().replace('http:','ws:').replace(/:\d+\/.*/,":8081/"));
         ws.onmessage = _on_message;
         $(document).mousemove(function(e){ ws.send(e.pageX +','+ e.pageY) });
       };

@@ -3,7 +3,7 @@ require 'eventmachine'
 require 'em-http'
 
 EventMachine.run {
-  ws = EventMachine::HttpRequest.new("ws://localhost:8080/").get :timeout => 0
+  ws = EventMachine::HttpRequest.new("ws://localhost:8081/").get :timeout => 0
 
   ws.callback { puts "WebSocket connected!" }
   ws.stream   { |msg| puts "Recieved: #{msg}" }
