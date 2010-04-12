@@ -1,3 +1,6 @@
+!color = #000
+!background-color = #fff
+
 body
   background-image: none
   font-family: Verdana, Helvetica, sans-serif
@@ -9,22 +12,7 @@ h1, h2, h3, h4
   padding: 0
   font-weight: inherit
 
-
-.slide h1
-  position: absolute
-  top: 0.7em
-  left: 87px
-  z-index: 1
-  margin: 0
-  padding: 0.3em 0 0 50px
-  white-space: nowrap
-  font: bold 150%/1em Helvetica, sans-serif
-  text-transform: capitalize
-  color: #DDE
-  background: #005
-
-
-\:link, :visited
+a:link, a:visited
   text-decoration: underline
   color: #4a4a4a
 
@@ -37,16 +25,18 @@ h1, h2, h3, h4
 
 .slide
   h1
-    color: #fff
+    position: absolute
+    top: 0.6em
+    left: 1em
+    z-index: 1
+    margin: 0
+    padding: 0
+    white-space: nowrap
+    font: bold 150%
+    text-transform: capitalize
+    color: #{!background-color}
     background-color: transparent
-    padding-left: 0
-    padding-top: 60px
-    margin-top: -1.5em
-    margin-left: 0px
     text-transform: none
-
-  h2
-    margin-left: 3%
 
   h3
     font-size: 80%
@@ -64,16 +54,8 @@ h1, h2, h3, h4
     margin: 10px auto
     max-height: 13em
 
-
-div
-  &#header
-    background: #000 url('lautfm_logo.png') no-repeat top right
-
-  &#footer
-    font-size: 0.5em
-    font-weight: bold
-    padding: 1em 0
-
+  .current
+    color: #{!color}
 
 #footer
   h1
@@ -85,17 +67,20 @@ div
     padding: 0 1em
     font-style: italic
 
-
 div
-  &#footer
-    color: #fff
-    background-color: #000
+  &#header
+    background: #{!color} url('lautfm_logo.png') no-repeat top right
 
+  &#footer
+    font-size: 0.5em
+    font-weight: bold
+    padding: 1em 0
+    color: #{!background-color}
+    background-color: #{!color}
     h1, h2
       margin: 0
       padding: 0.2em 1em
       line-height: 1.2em
-
     a
       color: #aab
 
@@ -107,37 +92,28 @@ div
     text-align: right
     font: bold 0.9em Verdana, Helvetica, sans-serif
 
-
 html>body div#controls
   position: fixed
   padding: 0
   top: auto
 
-
 #controls
   #navLinks a
     padding: 0
     margin: 0 0.5em
-    background: #005
     border: none
-    color: #779
+    color: #aab
+    background: transparent
     cursor: pointer
 
   #navList #jumplist
     background: #DDD
     color: #227
 
-
 #currentSlide
   text-align: center
   font-size: 0.5em
   color: #449
-
-
-#controls #navLinks a, #plink
-  background: transparent
-  color: #aab
-
 
 div#logo
   right: 20px
@@ -146,35 +122,8 @@ div#logo
   height: 60px
   background: url('com_logo.png') no-repeat 20px 10px
 
-
-#navLinks a
-  background: transparent none
-
-
-.incremental
+.incremental, .incremental *, .incremental *:after
   visibility: hidden
-
-  *
-    visibility: hidden
-
-    &:after
-      visibility: hidden
-
-
-.slide
-  .current
-    color: #333
-
-  code
-    color: #a00
-
-  h1.bang
-    margin: 2.5em 0px 0px 0px
-    padding: 0px
-    font-size: 230%
-    color: #a00
-    white-space: normal
-
 
 ul
   margin-bottom: 1em

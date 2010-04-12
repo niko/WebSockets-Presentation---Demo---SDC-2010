@@ -141,13 +141,19 @@ h1. Proxies & Firewalls
 
 h1. Proxies & Firewalls
 
-+ Proxies behandeln WebSocket-Verbindungen im Prinzip gleich, wie HTTP
++ Proxies behandeln WebSocket-Verbindungen im Prinzip gleich wie HTTP
 
 ::slide::
 
 h1. Proxies & Firewalls
 
-+ Proxies behandeln WebSocket-Verbindungen *im Prinzip* gleich, wie HTTP
++ Proxies behandeln WebSocket-Verbindungen *im Prinzip* gleich wie HTTP
+
+::slide::
+
+h1. Proxies & Firewalls
+
++ Proxies behandeln WebSocket-Verbindungen *im Prinzip* gleich wie HTTP
 ++ transparente vs. explizite Proxies
 ++ ws:// vs. wss://
 + Firewalls müssen Verbindung zu WS-Port zulassen
@@ -215,11 +221,32 @@ h1. Twitter Streaming
 
 ::slide::
 
+h1. Twitter Streaming Javascript Code
+
+::html
+<script>
+  start = function(){
+    ws = new WebSocket('ws://nikos_rechner:8080');
+    ws.onmessage = function(tweet){
+      $('#tweets').prepend('<li>'+tweet.data+'</li>');
+    };
+  };
+  stop = function(){ ws.close(); }
+</script>
+<a href="#" onclick="start()">Start</a>
+<a href="#" onclick="stop()">Stop</a>
+<ul id="tweets"></ul>
+html::
+
+::slide::
+
 h1. Mouse Tracking
 
 <iframe src="ws_demo/mouse.html"></iframe>
 
 ::slide::
+
+h1. Mouse Tracking Ruby Code
 
 ::ruby
 @clients = []
@@ -241,16 +268,23 @@ ruby::
 
 ::slide::
 
+h1. (hier pathetischen Titel einstetzen)
+
+::slide::
+
 h1. Webentwicklung in der Zukunft
 
-* Werden wir Web-Applikationen in Zukunft eher so schreiben wie Desktop-Applikationen?
-* Server-Events direkt an UI-Elemente knüpfen?
-* Serverseitig asynchron auf Datenbanken und andere Web-Services zugreifen?
-* Immer mehr Tasks als Background-Jobs implementieren? Lernen müssen, mit Concurrency-Modellen umzugehen?
-* Prozesse, Threads, Semi-Coroutinen, Event-Loops?
-* Wie kommunizieren mehrere Server eines Multi-Server-Setups miteinander? Message-Queues?
-* Passen Continuation-basierte Web-Frameworks besser zur Architektur mit einer stehenden Client-Server-Verbindung?
-* Scaling? Load-Balancing?
++ Werden wir bestimmte Web-Applikationen eher so schreiben wie Desktop-Applikationen?
++ Server-Events direkt an UI-Elemente knüpfen?
++ Serverseitig asynchron auf Datenbanken und andere Web-Services zugreifen?
++ Immer mehr Tasks als Background-Jobs implementieren? Lernen müssen, mit Concurrency-Modellen umzugehen?
++ Prozesse, Threads, Semi-Coroutinen, Event-Loops?
+
+::slide::
+
++ Wie kommunizieren mehrere Server eines Multi-Server-Setups miteinander? Message-Queues?
++ Passen Continuation-basierte Web-Frameworks besser zur Architektur mit einer stehenden Client-Server-Verbindung?
++ Scaling? Load-Balancing?
 
 ::slide::
 
