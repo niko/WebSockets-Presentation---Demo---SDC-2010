@@ -1,5 +1,5 @@
 !color = #000
-!background-color = #fff
+!background_color = #fff
 
 body
   background-image: none
@@ -11,6 +11,7 @@ h1, h2, h3, h4
   margin: 0
   padding: 0
   font-weight: inherit
+  text-shadow: none
 
 a:link, a:visited
   text-decoration: underline
@@ -34,7 +35,7 @@ a:link, a:visited
     white-space: nowrap
     font: bold 150%
     text-transform: capitalize
-    color: #{!background-color}
+    color = !background_color
     background-color: transparent
     text-transform: none
 
@@ -55,7 +56,7 @@ a:link, a:visited
     max-height: 13em
 
   .current
-    color: #{!color}
+    color = !color
 
 #footer
   h1
@@ -69,14 +70,14 @@ a:link, a:visited
 
 div
   &#header
-    background: #{!color} url('lautfm_logo.png') no-repeat top right
+    background = "#{!color} url('lautfm_logo.png') no-repeat top right"
 
   &#footer
     font-size: 0.5em
     font-weight: bold
     padding: 1em 0
-    color: #{!background-color}
-    background-color: #{!color}
+    color = !background_color
+    background-color = !color
     h1, h2
       margin: 0
       padding: 0.2em 1em
@@ -122,8 +123,9 @@ div#logo
   height: 60px
   background: url('com_logo.png') no-repeat 20px 10px
 
-.incremental, .incremental *, .incremental *:after
-  visibility: hidden
+// .incremental, .incremental *, .incremental *:after
+// .incremental
+//   visibility: hidden
 
 ul
   margin-bottom: 1em
