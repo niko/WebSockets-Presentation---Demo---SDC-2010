@@ -2,11 +2,6 @@ require 'rubygems'
 require 'eventmachine'
 require 'em-websocket'
 require 'twitter/json_stream'
-
-
-lib_path = File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib'))
-$LOAD_PATH.unshift lib_path unless $LOAD_PATH.include?(lib_path)
-
 require 'ostruct'
 require 'action_view'
 require 'action_view/helpers'
