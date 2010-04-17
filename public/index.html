@@ -43,7 +43,9 @@
     <!-- embedded styles -->
     <style type="text/css" media="all">
       iframe{border:none; width:29em; height:14em;}
-      #slide0 img{ float:left; margin-left:6em; }
+      #slide0 img.fork{ margin-left:6em; }
+      #slide0 a.cc{ display:block; margin-top:4em; }
+      #slide0 a.cc img{ margin:1em; }
     </style>
     <!-- S5 JS -->
     <script src="ui/default/slides.js" type="text/javascript"></script>
@@ -72,7 +74,18 @@ h2. Niko Dittmann
 
 h2. "http://github.com/niko":http://github.com/niko
 
-!pix/forkme.png!
+<img class="fork" src="pix/forkme.png">
+
+<a class="cc" href="http://creativecommons.org/licenses/by/3.0/de/"><img src="pix/cc-by.png"></a>
+
+::slide::
+
+h1. "Realtime"-Anwendungen
+
++ Chat-Anwendungen
++ Kollaborations-Anwendungen
++ Monitoring-Tools
++ Games
 
 ::slide::
 
@@ -113,27 +126,28 @@ h1. Potenzielle Haken
 
 h1. Potenzielle Haken
 
-+ Browser Unterstützung
++ Browser-Unterstützung
 + Sicherheit
 + Proxies & Firewalls
 + Cookies / Sessions
 
 ::slide::
 
-h1. Browser Unterstützung
+h1. Browser-Unterstützung
 
 !pix/laut_links.png!
 
 ::slide::
 
-h1. Browser Unterstützung
+h1. Browser-Unterstützung
 
 + Chrome dev 4
 + Gecko nightlies
 + WebKit nightlies
-+ IE12?
++ IE 12?
 + Fallback: WebSockets Emulation über Flash
-++ Chrome 3, Firefox 3.5, IE8, Flash 9
+++ Chrome 3, Firefox 3, IE 7
+++ Flash 9
 ++ benötigt Policy-Server
 
 ::slide::
@@ -147,7 +161,7 @@ h1. Sicherheit
 h1. Sicherheit
 
 + Verbindung wird vom Client initiiert
-+ Nur zum Sever, von dem die Seite stammt
++ Nur zum Server, von dem die Seite stammt
 + Gleiche Einschränkungen wie AJAX Requests
 + Flash-Emulation: Policy File schränkt Ports & Domains ein
 
@@ -156,18 +170,6 @@ h1. Sicherheit
 h1. Proxies & Firewalls
 
 !pix/wall.jpg!
-
-::slide::
-
-h1. Proxies & Firewalls
-
-+ Proxies behandeln WebSocket-Verbindungen im Prinzip gleich wie HTTP
-
-::slide::
-
-h1. Proxies & Firewalls
-
-+ Proxies behandeln WebSocket-Verbindungen *im Prinzip* gleich wie HTTP
 
 ::slide::
 
@@ -189,19 +191,9 @@ h1. Mankos
 
 h1. Mankos
 
-+ Kein explizites Framing
-+ Datentypen UTF-8 & Binary
-+ Keine Message-Fragmentierung vorgesehen
-
-::slide::
-
-h1. Einsatzzweck
-
-+ Chat
-+ Server-Monitoring
-+ Auto-Completion & filtern von Suchergebnislisten
-+ Real-Time Web
-+ Games
++ Kein definiertes Verbindungs-Ende
++ Keine Message-Fragmentierung
++ Datentypen nur UTF-8 & Binary
 
 ::slide::
 
@@ -236,6 +228,8 @@ h1. Demo-Time
 ::slide::
 
 h1. Twitter Streaming
+
+http://192.168.x.x:3333/ws_demo
 
 <iframe src="ws_demo/twitter.html" marginheight="0" marginwidth="0" frameborder="0" scrolling="no"></iframe>
 
@@ -288,7 +282,7 @@ ruby::
 
 ::slide::
 
-h1. (hier pathetischen Titel einstetzen)
+h1. (hier pathetischen Titel einsetzen)
 
 ::slide::
 
@@ -312,7 +306,7 @@ h1. Links
 
 h2. Allgemeine Infos
 
-* "WebSockets Protokoll Spezifikation":http://www.tbray.org/drafts/wsock-00
+* "WebSockets Protokoll-Spezifikation":http://www.tbray.org/drafts/wsock-00
 * "WebSockets & Proxies":http://www.infoq.com/articles/Web-Sockets-Proxy-Servers
 
 h2. Clientseitig
@@ -330,7 +324,7 @@ h2. Serverseitig
 * "Cramp - asynchrones Ruby-Web-Framework":http://github.com/lifo/cramp
 * "Kaazing WebSocket Gateway":http://www.kaazing.com/download
 * "Node.js Evented I/O for V8":http://github.com/ry/node
-* "Jetty - Java Webserver mit WebSockets-Support":http://blogs.webtide.com/gregw/entry/jetty_websocket_server
+* "Jetty - Java-Webserver mit WebSockets-Support":http://blogs.webtide.com/gregw/entry/jetty_websocket_server
 
 ::slide::
 
@@ -341,8 +335,8 @@ h2. Weiterführend
 * "Wikipedia: The Realtime Web":http://en.wikipedia.org/wiki/Real-time_web
 * "«RTW - WTF?» WebSockets Präsentation":http://www.slideshare.net/mloughran/real-time-web-whats-that-for
 * "twitter-stream ruby gem":http://github.com/voloko/twitter-stream
-* "Seaside - Continuation-basiertes Web-Framework in Smalltalk":http://seaside.st/
-* "Wee - Continuation-basiertes Web-Framework in Ruby":http://github.com/mneumann/wee
+* "Seaside - continuation-basiertes Web-Framework in Smalltalk":http://seaside.st/
+* "Wee - continuation-basiertes Web-Framework in Ruby":http://github.com/mneumann/wee
 
 ::slide::
 
@@ -357,6 +351,10 @@ h2. in dieser Reihenfolge:
 * "flickr.com/photos/aquilaonline":http://www.flickr.com/photos/aquilaonline
 * "flickr.com/photos/joriel":http://www.flickr.com/photos/joriel
 * "failblog.org":http://failblog.org
+
+::slide
+
+h1. Fragen?
 
     </div>
   </body>
